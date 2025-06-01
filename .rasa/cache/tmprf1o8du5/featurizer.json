@@ -1,0 +1,81 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "adjust_volume": 0,
+        "back": 1,
+        "fallback": 2,
+        "goodbye": 3,
+        "greet": 4,
+        "nlu_fallback": 5,
+        "out_of_scope": 6,
+        "pause_music": 7,
+        "play_genre": 8,
+        "play_mood": 9,
+        "play_song": 10,
+        "restart": 11,
+        "resume_music": 12,
+        "search_by_album": 13,
+        "search_by_artist": 14,
+        "session_end": 15,
+        "session_start": 16,
+        "silence_timeout": 17
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "action_send_text": 11,
+        "...": 12,
+        "action_extract_slots": 13,
+        "action_cancel_flow": 14,
+        "action_correct_flow_slot": 15,
+        "action_clarify_flows": 16,
+        "action_run_slot_rejections": 17,
+        "action_clean_stack": 18,
+        "action_trigger_search": 19,
+        "action_trigger_chitchat": 20,
+        "action_reset_routing": 21,
+        "action_hangup": 22,
+        "action_repeat_bot_messages": 23,
+        "action_block_digression": 24,
+        "action_continue_digression": 25,
+        "utter_adjust_volume": 26,
+        "utter_fallback": 27,
+        "utter_goodbye": 28,
+        "utter_greet": 29,
+        "utter_pause_music": 30,
+        "utter_play_genre": 31,
+        "utter_play_mood": 32,
+        "utter_play_song": 33,
+        "utter_resume_music": 34,
+        "utter_search_by_album": 35,
+        "utter_search_by_artist": 36
+      },
+      "entities": {
+        "album": 0,
+        "artist": 1,
+        "genre": 2,
+        "mood": 3,
+        "song": 4
+      },
+      "slots": {
+        "language_0": 0
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

@@ -1,0 +1,594 @@
+version: "3.1"
+
+nlu:
+  # conversation intents
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - hey there
+      - good day
+      - good morning
+      - good evening
+      - howdy
+      - what's up
+      - yo
+      - hi bot
+      - hey assistant
+      - hello MusicBot
+      - hey, how are you?
+      - hi there, bot
+
+
+  - intent: goodbye
+    examples: |
+      - goodbye
+      - see you later
+      - bye
+      - catch you later
+      - talk to you soon
+      - bye bye
+      - thanks, bye
+      - okay, I'm leaving
+      - see ya
+      - later
+
+  - intent: ask_bot_name
+    examples: |
+      - what's your name?
+      - who are you?
+      - do you have a name?
+      - tell me your name
+      - may I know your name?
+  - intent: ask_bot_purpose
+    examples: |
+      - what do you do?
+      - what can you help me with?
+      - what is your purpose?
+      - how can you assist me?
+      - why were you created?
+      - what are you here for?
+
+  - intent: ask_bot_purpose
+    examples: |
+      - what do you do?
+      - what can you help me with?
+      - what is your purpose?
+      - how can you assist me?
+      - why were you created?
+      - what are you here for?
+  - intent: thank_bot
+    examples: |
+      - thank you
+      - thanks
+      - much appreciated
+      - I appreciate it
+      - thank you so much
+      - thanks bot
+      - thanks MusicBot
+  - intent: deny
+    examples: |
+      - no
+      - nope
+      - not really
+      - I don't think so
+      - no thank you
+      - nah
+  - intent: bot_identity
+    examples: |
+      - are you a human?
+      - are you real?
+      - are you a robot?
+      - you're not a real person, are you?
+      - are you AI?
+      - are you just a bot?
+  - intent: ask_bot_age               # bạn bao nhiêu tuổi?
+    examples: |
+      - how old are you?
+      - what's your age?
+      - when were you created?
+      - how long have you been around?
+      - when is your birthday?
+      - when were you born?
+      - how long have you existed?
+      - how long have you been here?
+      - how long have you been alive?
+  - intent: ask_bot_creator           # ai tạo ra bạn?
+    examples: |
+      - who made you?
+      - who created you?
+      - who is your creator?
+      - who designed you?
+      - who programmed you?
+      - who developed you?
+      - who built you?
+      - who is your parent company?
+      - who is behind your creation?
+      - who is your developer?
+  - intent: ask_bot_language          # bạn nói được những ngôn ngữ nào?
+    examples: |
+      - what languages do you speak?
+      - can you speak other languages?
+      - do you understand multiple languages?
+      - how many languages can you communicate in?
+      - what is your primary language?
+      - do you understand English?
+      - do you speak Vietnamese?
+      - do you speak Spanish?
+      - do you speak French?
+      - do you speak Chinese?
+      - do you speak Japanese?
+  - intent: ask_bot_capabilities      # bạn có thể làm gì?
+    examples: |
+      - what can you do?
+      - what are your capabilities?
+      - what are your features?
+      - what tasks can you perform?
+      - what services do you offer?
+      - how can you assist me?
+      - what are your skills?
+      - what are your abilities?
+      - what can I ask you to do?
+  - intent: ask_bot_location          # bạn đến từ đâu?
+    examples: |
+      - where are you from?
+      - where do you live?
+      - what is your location?
+      - where were you created?
+      - where is your server located?
+      - where is your data center?
+      - where is your home base?
+      - where do you operate from?
+      - where is your headquarters?
+  - intent: confirm                   # xác nhận (yes, okay, sure)
+    examples: |
+      - yes
+      - sure
+      - okay
+      - absolutely
+      - definitely
+      - of course
+      - that's right
+      - you got it
+      - indeed
+      - correct
+  - intent: small_talk_howareyou      # bạn khỏe không?
+    examples: |
+      - how are you?
+      - how's it going?
+      - how do you feel?
+      - how are you doing?
+      - how's everything?
+      - how's life?
+      - how are things?
+      - how are you feeling?
+      - how's your day?
+  - intent: small_talk_love_you       # tôi yêu bạn
+    examples: |
+      - I love you
+      - you're amazing
+      - you're the best
+      - I appreciate you
+      - you're awesome
+      - I adore you
+      - you're fantastic
+      - I think you're great
+      - you're wonderful
+      - I'm grateful for you
+
+# search intents
+  - intent: search_song_by_name       # tìm bài hát theo tên
+    examples: |
+      - find the song [Shape of You](song)
+      - I want to hear [Perfect](song)
+      - play the song [Blinding Lights](song)
+      - search for [Bad Guy](song)
+      - find the song [Despacito](song)
+      - play the song [Uptown Funk](song)
+      - search for [Rolling in the Deep](song)
+      - find the song [Someone Like You](song)
+      - play the song [Perfect](song)
+  - intent: search_song_by_lyrics     # tìm bài hát theo lời
+    examples: |
+      - find the song with lyrics [I want to hear you say](song)
+      - I want to hear the song with lyrics [I love you](song)
+      - play the song with lyrics [I miss you](song)
+      - search for the song with lyrics [I need you](song)
+      - find the song with lyrics [I want to be with you](song)
+      - play the song with lyrics [I can't live without you](song)
+      - search for the song with lyrics [I will always love you](song)
+  - intent: search_artist_info        # tìm tiểu sử nghệ sĩ
+    examples: |
+      - find information about [Avicii](artist)
+      - tell me about [Taylor Swift](artist)
+      - who is [Ed Sheeran](artist)?
+      - tell me about [BTS](artist)
+      - tell me about the artist [Avicii](artist)
+      - tell me about the artist [Taylor Swift](artist)
+      - do you know [Ed Sheeran](artist)?
+      - who is [BTS](artist)?
+  - intent: search_album_info         # thông tin về album
+    examples: |
+      - find information about the album [Chill Track](album)
+      - tell me about the album [Top Hits](album)
+      - who is the artist of the album [Best of 2023](album)?
+      - tell me about the album [Chill Vibes](album)
+      - tell me about the album [Summer Hits](album)
+      - do you know the album [Winter Classics](album)?
+  - intent: infer_song_meaning        # suy luận ý nghĩa bài hát
+    examples: |
+      - what is the meaning of the song [Shape of You](song)?
+      - tell me the meaning of the song [Perfect](song)
+      - explain the meaning of the song [Blinding Lights](song)
+      - what does the song [Bad Guy](song) mean?
+      - tell me the meaning of the song [Despacito](song)
+      - explain the meaning of the song [Uptown Funk](song)
+  - intent: suggest_similar_songs     # gợi ý bài hát tương tự
+    examples: |
+      - suggest songs similar to [Shape of You](song)
+      - find songs like [Perfect](song)
+      - recommend songs similar to [Blinding Lights](song)
+      - show me songs like [Bad Guy](song)
+      - suggest songs similar to [Despacito](song)
+      - find songs like [Uptown Funk](song)
+  - intent: search_by_language        # tìm nhạc theo ngôn ngữ
+    examples: |
+      - find songs in [English](language)
+      - I want to hear songs in [Spanish](language)
+      - play music in [French](language)
+      - search for songs in [Vietnamese](language)
+      - find songs in [Korean](language)
+      - play music in [Japanese](language)
+  - intent: search_by_decade          # tìm nhạc theo thập niên
+    examples: |
+      - find songs from the [80s](decade)
+      - I want to hear music from the [90s](decade)
+      - play songs from the [2000s](decade)
+      - search for music from the [2010s](decade)
+      - find songs from the [2020s](decade)
+      - play music from the [70s](decade)
+  - intent: ask_playlist
+    examples: |
+      - do you have any playlists?
+      - suggest a playlist
+      - what should I listen to?
+
+  - intent: search_by_artist
+    examples: |
+      - find music by [Avicii](artist)
+      - I want to hear songs by [Taylor Swift](artist)      
+      - play songs by [Ed Sheeran](artist)
+      - search music by [BTS](artist)
+
+  - intent: search_by_album
+    examples: |
+      - find the album [Chill Track](album)
+      - I want to hear the album [Top Hits](album)
+      - play music from the album [Best of 2023](album)
+      - find the album [Chill Vibes](album)
+
+  - intent: search_by_genre
+    examples: |
+      - play [pop](genre) music
+      - I want to listen to [rock](genre)
+      - find some [jazz](genre) songs
+      - play [hip hop](genre) music
+      - play [EDM](genre)
+      - play [classical](genre) tracks
+      - find [country](genre) music
+      - play [R&B](genre)
+      - find [reggae](genre) songs
+      - play [blues](genre)
+
+  - intent: search_by_playlist
+    examples: |
+      - find the [chill](playlist) playlist
+      - I want to hear the [happy](playlist) playlist
+      - play the [sad](playlist) playlist
+      - show me [workout](playlist) playlist
+      - play [relax](playlist) playlist
+      - play the [focus](playlist) playlist
+      - find a [study](playlist) playlist
+      - play [sleep](playlist) playlist
+      - play [party](playlist) playlist
+      - play [work](playlist) playlist
+
+  - intent: ask_music_artist_info
+    examples: |
+      - information about Avicii
+      - tell me about Taylor Swift
+      - who is Ed Sheeran?
+      - tell me about BTS
+      - tell me about the artist Avicii
+      - tell me about the artist Taylor Swift
+      - do you know Ed Sheeran?
+      - who is BTS?
+      - is Coldplay a band?
+      - about the artist Coldplay
+      - tell me about the artist Coldplay
+      - about Avicii
+      - about Justin Bieber
+      - give me information about Taylor Swift
+      - give me information about Ed Sheeran
+      - give me information about BTS
+      - give me information about Coldplay
+
+  - intent: ask_music_info
+    examples: |
+      - tell me about the song Wake Me Up
+      - tell me about the song Shape of You
+      - tell me about the song Blinding Lights
+      - tell me about the song Bad Guy
+      - tell me about the song Despacito
+      - tell me about the song Uptown Funk
+      - tell me about the song Rolling in the Deep
+      - tell me about the song Someone Like You
+      - tell me about the song Perfect
+
+  # control intents
+  - intent: play_music
+    examples: |
+    - Play [Shape of You](song)
+    - I want to listen to [Perfect](song)
+    - Play the song [Blinding Lights](song)
+    - Can you play [Shape of You](song)?
+    - Start playing [Perfect](song)
+    - I'd like to hear [Blinding Lights](song)
+
+  - intent: play_music_mood
+    examples: |
+      - play some [happy](mood) music
+      - I want to hear [relaxing](mood) music
+      - give me some [chill](mood) tracks
+      - play [sad](mood) songs
+      - find some [energetic](mood) music
+      - find [calm](mood) songs
+      - find some [positive](mood) tracks
+      - play [relaxing](mood) music
+
+  - intent: like_song
+    examples: |
+      - I like this song
+      - This one's my favorite
+      - I love this track
+      - This song is great
+      - Add this to my favorites
+      - I really enjoy this song
+      - Save this song
+      - Can you like this song for me?
+      - Mark this as liked
+      - Add to liked songs
+
+  - intent: dislike_song
+    examples: |
+      - I don't like this song
+      - This one's not for me
+      - I hate this track
+      - Skip this, I dislike it
+      - Please remove this from my list
+      - This song sucks
+      - Can you dislike this song?
+      - I want to remove this from liked
+      - Not a fan of this one
+      - Don't play this again
+  - intent: pause_music
+    examples: |
+      - pause the music
+      - stop the music
+      - pause music
+      - turn off music
+
+  - intent: resume_music
+    examples: |
+      - resume the music
+      - continue playing music
+      - resume music
+      - play music again
+
+  - intent: skip_song
+    examples: |
+      - Skip this song
+      - Next song please
+      - Play the next one
+      - I don't want to hear this
+      - Change the song
+      - Go to the next track
+      - I want a new song
+      - This one's boring, skip it
+      - What's next?
+      - Can you move to the next song?
+
+  - intent: previous_song
+    examples: |
+      - Play the previous song
+      - Go back to the last track
+      - I want to hear the last song again
+      - Replay the previous one
+      - Can you go back?
+      - I liked the last one, play it again
+      - Rewind the song
+      - Play the earlier one
+      - Go one track back
+      - Play what you played before
+
+  - intent: repeat_song
+    examples: |
+      - Repeat this song
+      - Play this song again
+      - Can you repeat that?
+      - I want to hear it again
+      - Play it again please
+      - Let's loop this song
+      - Replay the song
+      - Start this song from the beginning
+      - Again, please
+      - Can you put it on repeat?
+
+  - intent: shuffle_play
+    examples: |
+      - Shuffle the playlist
+      - Play songs randomly
+      - Turn on shuffle
+      - Random songs please
+      - I want shuffled music
+      - Play in random order
+      - Shuffle my music
+      - Mix it up
+      - Don't play in order
+      - Play a random song
+
+  - intent: volume_up
+    examples: |
+      - Turn up the volume
+      - Make it louder
+      - Increase the sound
+      - Can you make it louder?
+      - Raise the volume
+      - I can't hear it, louder please
+      - Pump up the volume
+      - Louder
+      - Add more volume
+      - Crank it up
+
+  - intent: volume_down
+    examples: |
+      - Lower the volume
+      - It's too loud
+      - Reduce the sound
+      - Turn it down
+      - Can you make it quieter?
+      - Quiet down a bit
+      - Decrease the volume
+      - Volume down
+      - I want it softer
+      - Please turn it down
+
+  - intent: mute_music
+    examples: |
+      - Mute the music
+      - Turn off the sound
+      - I want it silent
+      - Silence the music
+      - Stop the sound
+      - Make it mute
+      - Mute please
+      - Shut off audio
+      - Kill the sound
+      - I don't want to hear anything
+
+  - intent: unmute_music
+    examples: |
+      - Unmute the music
+      - Turn the sound back on
+      - I want to hear it again
+      - Restore the audio
+      - Bring back the sound
+      - Please unmute
+      - Unmute please
+      - Enable audio
+      - Sound back on
+      - Put the volume back
+  - intent: stop_music                # dừng hẳn nhạc
+    examples: |
+      - stop the music
+      - turn off the music
+      - stop playing music
+      - pause the music
+      - I want to stop the music
+      - can you stop the music?
+      - please stop the music
+      - turn off the sound
+      - end the music
+      - quit the music
+  - intent: set_volume                # đặt âm lượng mức cụ thể
+    examples: |
+      - set volume to 50%
+      - set volume to 70%
+      - set volume to 30%
+      - set volume to 80%
+      - set volume to 100%
+      - set volume to 20%
+      - set volume to 10%
+      - set volume to 90%
+      - set volume to 60%
+      - set volume to 40%
+  - intent: play_next_song            # phát bài tiếp theo
+    examples: |
+      - play the next song
+      - play the next track
+      - play the next one
+      - play the following song
+      - play the next music
+      - play the next track in the playlist
+      - play the next song in line
+      - play the next song on the list
+      - play the next song in queue
+      - play the next song in order
+  - intent: play_previous_song        # phát bài trước đó
+    examples: |
+      - play the previous song
+      - play the last song
+      - play the last track
+      - play the earlier song
+      - play the earlier track
+      - play the previous one
+      - play the previous music
+      - play the previous song in the playlist
+      - play the previous song in line
+      - play the previous song on the list
+  - intent: add_to_favorites          # thêm bài vào yêu thích
+    examples: |
+      - add this song to favorites
+      - save this song to favorites
+      - mark this song as favorite
+      - add this to my favorites
+      - like this song
+      - save this to my favorites
+      - add to my liked songs
+      - put this in my favorites
+      - add this track to favorites
+      - save this track to favorites
+  - intent: remove_from_favorites     # xóa khỏi danh sách yêu thích
+    examples: |
+      - remove this song from favorites
+      - delete this song from favorites
+      - unmark this song as favorite
+      - remove this from my favorites
+      - dislike this song
+      - delete this from my favorites
+      - remove from my liked songs
+      - take this out of my favorites
+      - remove this track from favorites
+      - delete this track from favorites
+  - intent: play_song_by_language     # phát nhạc theo ngôn ngữ
+    examples: |
+      - play music in [English](language)
+      - play songs in [Spanish](language)
+      - play music in [French](language)
+      - play songs in [Vietnamese](language)
+      - play music in [Korean](language)
+      - play songs in [Japanese](language)
+  - intent: repeat_playlist           # lặp lại toàn playlist
+    examples: |
+      - repeat the playlist
+      - loop the playlist
+      - play the playlist again
+      - repeat this playlist
+      - play this playlist on repeat
+      - loop this playlist
+      - play the playlist in a loop
+      - repeat the current playlist
+      - play the playlist continuously
+      - keep playing this playlist
+  - intent: change_music_speed        # điều chỉnh tốc độ phát
+    examples: |
+      - speed up the music
+      - slow down the music
+      - play it faster
+      - play it slower
+      - increase the speed
+      - decrease the speed
+      - make it faster
+      - make it slower
+      - adjust the speed of the music
+      - change the tempo of the music

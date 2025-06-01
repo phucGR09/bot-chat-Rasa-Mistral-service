@@ -1,0 +1,122 @@
+version: "3.1"
+
+rules:
+  # conversation rules
+  - rule: Greeting
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+  - rule: Respond to ask_bot_name
+    steps:
+      - intent: ask_bot_name
+      - action: utter_ask_bot_name
+  - rule: Respond to ask_bot_purpose
+    steps:
+      - intent: ask_bot_purpose
+      - action: utter_ask_bot_purpose
+  - rule: Respond to thank_bot
+    steps:
+      - intent: thank_bot
+      - action: utter_thank_bot
+  - rule: Respond to deny
+    steps:
+      - intent: deny
+      - action: utter_deny
+  - rule: Respond to bot_identity
+    steps:
+      - intent: bot_identity
+      - action: utter_bot_identity
+  # search rules
+  - rule: Ask about playlist
+    steps:
+      - intent: ask_playlist
+      - action: utter_ask_playlist
+
+  - rule: Search playlist by genre
+    steps:
+      - intent: search_by_genre
+      - action: utter_search_by_genre
+
+  - rule: Search playlist by artist
+    steps:
+      - intent: search_by_artist
+      - action: utter_search_by_artist
+
+  - rule: Search playlist by album
+    steps:
+      - intent: search_by_album
+      - action: utter_search_by_album
+
+  - rule: Pause music
+    steps:
+      - intent: pause_music
+      - action: utter_pause_music
+
+  - rule: Resume music
+    steps:
+      - intent: resume_music
+      - action: utter_resume_music
+
+  - rule: Lookup music information
+    steps:
+      - intent: ask_music_info
+      - action: action_ask_music_bot
+
+  - rule: Lookup artist information
+    steps:
+      - intent: ask_music_artist_info
+      - action: action_ask_music_bot
+
+  # control rules
+
+  - rule: Play music
+    steps:
+      - intent: play_music
+      - action: action_control_music
+
+  - rule: Play music based on mood
+    steps:
+      - intent: play_music_mood
+      - action: action_control_music
+
+  - rule: Like song
+    steps:
+      - intent: like_song
+      - action: action_control_music
+  - rule: Dislike song
+    steps:
+      - intent: dislike_song
+      - action: action_control_music
+  - rule: Previous song
+    steps:
+      - intent: previous_song
+      - action: action_control_music
+  - rule: Repeat song
+    steps:
+      - intent: repeat_song
+      - action: action_control_music
+  - rule: Shuffle play
+    steps:
+      - intent: shuffle_play
+      - action: action_control_music
+  - rule: Volume up
+    steps:
+      - intent: volume_up
+      - action: action_control_music
+  - rule: Volume down
+    steps:
+      - intent: volume_down
+      - action: action_control_music
+  - rule: Mute music
+    steps:
+      - intent: mute_music
+      - action: action_control_music
+  - rule: Unmute music
+    steps:
+      - intent: unmute_music
+      - action: action_control_music

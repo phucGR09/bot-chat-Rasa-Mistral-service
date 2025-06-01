@@ -1,0 +1,13 @@
+{
+  "0": "adjust_volume",
+  "1": "fallback",
+  "2": "goodbye",
+  "3": "greet",
+  "4": "pause_music",
+  "5": "play_genre",
+  "6": "play_mood",
+  "7": "play_song",
+  "8": "resume_music",
+  "9": "search_by_album",
+  "10": "search_by_artist"
+}

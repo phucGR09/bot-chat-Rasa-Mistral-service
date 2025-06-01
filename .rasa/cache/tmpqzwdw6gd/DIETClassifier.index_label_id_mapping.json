@@ -1,0 +1,15 @@
+{
+  "0": "ask_music_llm",
+  "1": "ask_playlist",
+  "2": "ask_weather",
+  "3": "goodbye",
+  "4": "greet",
+  "5": "pause_music",
+  "6": "play_music",
+  "7": "play_music_mood",
+  "8": "resume_music",
+  "9": "search_by_album",
+  "10": "search_by_artist",
+  "11": "search_by_genre",
+  "12": "search_by_playlist"
+}

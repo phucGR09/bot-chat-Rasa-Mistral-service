@@ -1,0 +1,13 @@
+{
+  "0": "ask_playlist",
+  "1": "goodbye",
+  "2": "greet",
+  "3": "pause_music",
+  "4": "play_music",
+  "5": "play_music_mood",
+  "6": "resume_music",
+  "7": "search_by_album",
+  "8": "search_by_artist",
+  "9": "search_by_genre",
+  "10": "search_by_playlist"
+}

@@ -1,0 +1,194 @@
+version: "3.1"
+
+entities:
+  - artist
+  - album
+  - playlist
+  - location
+  - mood
+  - genre
+  - song
+  - language
+  - decade
+
+intents:
+  # Hội thoại
+  - greet
+  - goodbye
+  - ask_bot_name
+  - ask_bot_purpose
+  - thank_bot
+  - deny
+  - bot_identity
+  - ask_bot_age
+  - ask_bot_creator
+  - ask_bot_language
+  - ask_bot_capabilities
+  - ask_bot_location
+  - confirm
+  - small_talk_howareyou
+  - small_talk_love_you
+
+  # Tìm kiếm & suy luận
+  - search_song_by_name
+  - search_song_by_lyrics
+  - search_artist_info
+  - search_album_info
+  - infer_song_meaning
+  - suggest_similar_songs
+  - search_by_language
+  - search_by_decade
+
+  # Hành động
+  - play_music
+  - play_music_mood
+  - ask_playlist
+  - pause_music
+  - resume_music
+  - search_by_artist
+  - search_by_album
+  - search_by_genre
+  - search_by_playlist
+  - ask_music_info
+  - ask_music_artist_info
+  - like_song
+  - dislike_song
+  - previous_song
+  - repeat_song
+  - shuffle_play
+  - volume_up
+  - volume_down
+  - mute_music
+  - unmute_music
+  - stop_music
+  - set_volume
+  - play_next_song
+  - play_previous_song
+  - add_to_favorites
+  - remove_from_favorites
+  - play_song_by_language
+  - repeat_playlist
+  - change_music_speed
+
+slots:
+  decade:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: decade
+  language:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: language
+  mood:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: mood
+
+  genre:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: genre
+  artist:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: artist
+  album:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: album
+  playlist:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: playlist
+  location:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: location
+  song_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: song
+
+forms:
+  music_form:
+    required_slots:
+      - mood
+      - genre
+
+responses:
+  utter_greet:
+    - text: "Hi there! How can I help you with music today?"
+
+  utter_pause_music:
+    - text: "Music has been paused."
+
+  utter_ask_bot_name:
+    - text: I'm MusicBot, your music assistant!
+
+  utter_ask_bot_purpose:
+    - text: I can help you play music, search songs, or answer music-related questions.
+
+  utter_bot_identity:
+    - text: I'm an AI-powered assistant designed to help you enjoy music.
+
+  utter_deny:
+    - text: No problem, let me know if you need anything else.
+
+  utter_thank_bot:
+    - text: You're welcome!
+
+  utter_resume_music:
+    - text: "Resuming music playback."
+
+  utter_search_by_artist:
+    - text: "Here are some songs by the {artist} you searched for: [Artist link](https://soundcloud.com/bahman-a/avicii-wake-me-up)"
+
+  utter_search_by_album:
+    - text: "Here are the tracks from the album: [Album link](https://soundcloud.com/geeky_guy/sets/chill-track?si=df8b23d58cc34b6091db45bec45e7216&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing)"
+
+  utter_search_by_genre:
+    - text: "Here are some {genre} songs for you: [Genre link](https://soundcloud.com/bahman-a/avicii-wake-me-up)"
+
+  utter_search_by_playlist:
+    - text: "Here are the songs from playlist {playlist}: [Playlist link](https://soundcloud.com/bahman-a/avicii-wake-me-up)"
+
+  utter_search_by_mood:
+    - text: "Here are some songs for the {mood} mood: [Mood link](https://soundcloud.com/bahman-a/avicii-wake-me-up)"
+
+  utter_goodbye:
+    - text: "Goodbye! Enjoy the music."
+
+  utter_play_music:
+    - text: "Here are today's top hits: [Top Hits](https://soundcloud.com/bahman-a/avicii-wake-me-up)"
+
+  utter_play_music_mood:
+    - text: 'Here are some songs that fit your "{mood}" mood: [Listen now](https://soundcloud.com/bahman-a/avicii-wake-me-up)'
+
+  utter_ask_playlist:
+    - text: "Would you like a playlist based on mood, genre, or a specific artist?"
+
+  utter_default:
+    - text: I'm not sure how to respond to that.
+
+  utter_error:
+    - text: Something went wrong while processing your request.
+
+  utter_playing_song:
+    - text: Playing the song for you now.
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+actions:
+  - action_ask_music_bot
+  - action_control_music

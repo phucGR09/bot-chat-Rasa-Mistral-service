@@ -1,0 +1,43 @@
+version: "3.1"
+stories:
+  - story: specific music playback
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: play_music
+      - action: music_form
+
+  - story: play music by mood
+    steps:
+      - intent: play_music_mood
+      - action: utter_play_music_mood
+
+  - story: pause music
+    steps:
+      - intent: pause_music
+      - action: utter_pause_music
+
+  - story: resume music
+    steps:
+      - intent: resume_music
+      - action: utter_resume_music
+
+  - story: search music by mood
+    steps:
+      - intent: play_music_mood
+      - action: utter_play_music_mood
+
+  - story: search by artist
+    steps:
+      - intent: search_by_artist
+      - action: utter_search_by_artist
+
+  - story: search by album
+    steps:
+      - intent: search_by_album
+      - action: utter_search_by_album
+
+  - story: say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
